@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+
+<body text="white">
+	<body style = "background : url(https://fsmedia.imgix.net/05/f7/28/b9/ff0c/494c/8b55/26816a764f22/the-complete-front-end-web-development-course.jpeg?crop=edges&fit=crop&auto=format%2Ccompress&dpr=2&h=325&w=650); background-size:100% 200%;"></body>
+		
+<script>
+
+function myfun(){
+
+	var r = confirm("I confirm the details I have entered");
+	
+	if(r== true){
+	/*document.getElementById("message3").innerHTML="Click here to Proceed";
+	return false;*/
+	window.location.href= "final3.html";
+	return false;
+	}
+	else
+	{
+	document.getElementById("message2").innerHTML="You pressed Cancel";
+	return false;
+	}
+	 
+}
+
+
+
+
+function function_alert(){
+
+	var a = document.getElementById("pass").value;
+	var b = document.getElementById("cpass").value;
+	var f = document.getElementById("name").value;
+	var l = document.getElementById("lname").value;
+	var e = document.getElementById("email").value;
+	
+	if(f==""){
+	document.getElementById("fmessage").innerHTML="Enter the first name";
+	return false;
+	}
+	
+		else if(l==""){
+	document.getElementById("lmessage").innerHTML="Enter the last name";
+	return false;
+	}
+	
+		else if(e==""){
+	document.getElementById("emessage").innerHTML="Enter your EmailID";
+	return false;
+	}
+	
+	
+	else if(a==""){
+	document.getElementById("messages").innerHTML="Fill Password";
+	return false;
+	}
+	
+	else if(a.length<5){
+	document.getElementById("messages").innerHTML="Password length must be greater than 5 characters";
+	return false;
+	}
+	
+		
+	else if(a.length>20){
+	document.getElementById("messages").innerHTML="Password length must be less than 20 characters";
+	return false;
+	}
+	
+	else if(a!=b){
+	
+		document.getElementById("messages").innerHTML="Passwords do not match";
+	return false;
+	}
+	
+	else{
+	
+	 return myfun();
+	 return false;
+	}
+
+
+	//alert("I confirm the details I have entered");
+	// window.location.href= "final3.html";
+	// }
+}
+</script>
+
+		<h1><u>Fill the following details</u></h1>
+		<p><h3>Access the specially prepared self-guiding materials on The Basics of Web Programming</h3></p>
+		<p><h3>		Be Able. Affordable Learning. Advance your Career. 		</h3></p>
+
+
+<form onsubmit="return function_alert()">
+
+First Name<input type="text" id="name" value=""><br></br>
+<span id="fmessage">  </span><br></br>
+
+Last Name<input type="text" id="lname" value=""><br></br>
+<span id="lmessage">  </span><br></br>
+
+Email<input type="text" id="email" value=""><br></br>
+<span id="emessage">  </span><br></br>
+
+Password<input type="password" id="pass" value=""><br></br>
+
+Confirm Password<input type="password" id="cpass" value=""><br></br>
+<span id="messages">  </span><br></br>
+<input type="submit" value="Submit">
+	
+<span id="message2">  </span><br></br>
+<span id="message3"><a href="final3.html">  </a>  </span><br></br>
+
+
+
+
+</form>
+</html>
